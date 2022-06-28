@@ -5,8 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "vitest",
-    "build": "rollup -c",
-    "example": "node lib"
+    "build": "rollup -c"
   },
   "keywords": [],
   "author": "EL JABIRI Tarik",
