@@ -9,9 +9,10 @@ describe('HeaderParser class', () => {
     });
 
     it('should match the header section', () => {
-        const _content = `2
+        const _content = `
+            2
         HEADER
-        0
+            0
         ENDSEC
         `;
         const tk = new Tokenizer(_content);
@@ -19,9 +20,10 @@ describe('HeaderParser class', () => {
     });
 
     it('should return an empty header object', () => {
-        const _content = `2
+        const _content = `
+            2
         HEADER
-        0
+            0
         ENDSEC
         `;
         const tk = new Tokenizer(_content);
@@ -31,13 +33,14 @@ describe('HeaderParser class', () => {
     });
 
     it('should return header object with one variable', () => {
-        const _content = `2
+        const _content = `
+            2
         HEADER
-        9
+            9
         $ACADVER
-        1
+            1
         AC1021
-        0
+            0
         ENDSEC
         `;
         const tk = new Tokenizer(_content);
@@ -51,7 +54,8 @@ describe('HeaderParser class', () => {
     });
 
     it('should complain about ENDSEC not found', () => {
-        const _content = `2
+        const _content = `
+            2
         HEADER
         `;
         const tk = new Tokenizer(_content);
@@ -61,27 +65,28 @@ describe('HeaderParser class', () => {
     });
 
     it('should return header object with tree variable', () => {
-        const _content = `2
+        const _content = `
+            2
         HEADER
-        9
+            9
         $ACADVER
-        1
+            1
         AC1021
-        9
+            9
         $INSBASE
-        10
+            10
         0.0
-        20
+            20
         0.0
-        30
+            30
         0.0
-        9
+            9
         $PLIMMAX
-        10
+            10
         12.0
-        20
+            20
         9.0
-        0
+            0
         ENDSEC
         `;
         const tk = new Tokenizer(_content);
