@@ -13,3 +13,12 @@ pnpm run build
 
 pnpm run example
 ```
+
+## Progress
+
+- [x] Parse `HEADER` section.
+- [x] Parse `CLASSES` section.
+- [x] Parse `TABLES` section.
+- [ ] Parse `BLOCKS` section.
+- [ ] Parse `ENTITIES` section.
+- [ ] Parse `OBJECTS` section.
