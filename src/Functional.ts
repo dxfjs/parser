@@ -146,7 +146,7 @@ export function value(token: token_t): string | number | boolean {
         (token.code >= 210 && token.code <= 239) ||
         (token.code >= 1010 && token.code <= 1059)
     )
-        parseFloat(token.value);
+        return parseFloat(token.value);
     else if (
         (token.code >= 60 && token.code <= 99) ||
         (token.code >= 160 && token.code <= 179) ||

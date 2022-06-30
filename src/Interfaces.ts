@@ -1,12 +1,16 @@
-import { DxfObj } from './Types';
+import { DxfObj, tokens_t } from './Types';
 
-export interface RecordCommons {
+export interface UnknownTokens {
+    unknowns?: tokens_t;
+}
+
+export interface RecordCommons extends UnknownTokens {
     handle: string;
     ownerObjectHandle: string;
     subclassMarker: string[];
 }
 
-export interface TableCommons<T, Multi> {
+export interface TableCommons<T, Multi> extends UnknownTokens {
     handle: string;
     ownerObjectHandle: string;
     subclassMarker: Multi extends true ? string[] : string;

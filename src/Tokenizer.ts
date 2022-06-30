@@ -17,11 +17,11 @@ export class Tokenizer {
     private index = 0;
 
     get cline(): number {
-        return this.index * 2 + 1;
+        return this.index * 2 + 1; // The line number of the code.
     }
 
     get vline(): number {
-        return this.index * 2 + 2;
+        return this.index * 2 + 2; // The line number of the value.
     }
 
     constructor(content: string) {
@@ -87,10 +87,12 @@ export class Tokenizer {
     }
 
     endsec(): void {
-        if (!this.is(endsec, true)) this.expected('ENDSEC', this.cline);
+        if (!this.hasNext() || !this.is(endsec, true))
+            this.expected('ENDSEC', this.cline);
     }
 
     endtab(): void {
-        if (!this.is(endtab, true)) this.expected('ENDTAB', this.cline);
+        if (!this.hasNext() || !this.is(endtab, true))
+            this.expected('ENDTAB', this.cline);
     }
 }
