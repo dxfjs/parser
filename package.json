@@ -1,5 +1,5 @@
 {
-  "name": "dxf-parser",
+  "name": "parser",
   "version": "0.0.1",
   "description": "dxf parser",
   "main": "./lib/index.js",
