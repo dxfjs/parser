@@ -1,7 +1,7 @@
 import { defineProperty, ename, value, variable } from '../Functional';
 import { ParserBase } from '../ParserBase';
 import { PointSpec } from '../Specifications';
-import { Tokenizer } from '../tokenizer';
+import { Tokenizer } from '../Tokenizer';
 import { DxfObj } from '../Types';
 
 export class HeaderParser extends ParserBase {

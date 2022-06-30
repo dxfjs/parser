@@ -1,5 +1,5 @@
 import { HeaderParser } from '../../src/HeaderParser/HeaderParser';
-import { Tokenizer } from '../../src/tokenizer';
+import { Tokenizer } from '../../src/Tokenizer';
 
 describe('HeaderParser class', () => {
     let header: HeaderParser;

@@ -4,7 +4,7 @@ import { TablesParser } from './TablesParser/TablesParser';
 import { BlocksParser } from './BlocksParser/BlocksParser';
 import { EntitiesParser } from './EntitiesParser/EntitiesParser';
 import { ObjectsParser } from './ObjectsParser/ObjectsParser';
-import { Tokenizer } from './tokenizer';
+import { Tokenizer } from './Tokenizer';
 import { eof, section } from './Functional';
 import { DxfGlobalObject } from './Interfaces';
 

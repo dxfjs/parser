@@ -1,6 +1,6 @@
 import { ename } from '../Functional';
 import { ParserBase } from '../ParserBase';
-import { Tokenizer } from '../tokenizer';
+import { Tokenizer } from '../Tokenizer';
 
 export class UcsParser extends ParserBase {
     constructor() {

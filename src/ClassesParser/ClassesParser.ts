@@ -2,7 +2,7 @@ import { defineProperty, eclass, ename } from '../Functional';
 import { ClassRecord } from '../Interfaces';
 import { ParserBase } from '../ParserBase';
 import { ClassSpec } from '../Specifications';
-import { Tokenizer } from '../tokenizer';
+import { Tokenizer } from '../Tokenizer';
 
 export class ClassesParser extends ParserBase {
     records: ClassRecord[];

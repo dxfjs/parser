@@ -1,4 +1,4 @@
-import { Tokenizer } from './tokenizer';
+import { Tokenizer } from './Tokenizer';
 import {
     DxfObj,
     matcher_t,

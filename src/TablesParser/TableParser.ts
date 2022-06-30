@@ -10,7 +10,7 @@ import {
 import { RecordCommons, TableCommons } from '../Interfaces';
 import { ParserBase } from '../ParserBase';
 import { TableCommonsSpec } from '../Specifications';
-import { Tokenizer } from '../tokenizer';
+import { Tokenizer } from '../Tokenizer';
 import { SpecificationMap } from '../Types';
 
 export class TableParser<

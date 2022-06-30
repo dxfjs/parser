@@ -1,7 +1,7 @@
 import { defineProperty, last, lTypeElement } from '../Functional';
 import { LTypeElement, LTypeRecord } from '../Interfaces';
 import { LTypeElementSpec, LTypeRecordSpec } from '../Specifications';
-import { Tokenizer } from '../tokenizer';
+import { Tokenizer } from '../Tokenizer';
 import { TableParser } from './TableParser';
 
 export class LTypeParser extends TableParser<LTypeRecord> {

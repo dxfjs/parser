@@ -1,4 +1,4 @@
-import { Tokenizer } from './tokenizer';
+import { Tokenizer } from './Tokenizer';
 
 export abstract class ParserBase {
     name: string;

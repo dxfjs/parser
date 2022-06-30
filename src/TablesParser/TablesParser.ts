@@ -1,6 +1,6 @@
 import { ename, table } from '../Functional';
 import { ParserBase } from '../ParserBase';
-import { Tokenizer } from '../tokenizer';
+import { Tokenizer } from '../Tokenizer';
 import { AppIdParser } from './AppIdParser';
 import { BlockRecordParser } from './BlockRecordParser';
 import { DimStyleParser } from './DimStyleParser';
