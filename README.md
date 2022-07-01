@@ -16,9 +16,15 @@ pnpm run example
 
 ## Progress
 
-- [x] Parse `HEADER` section.
-- [x] Parse `CLASSES` section.
-- [x] Parse `TABLES` section.
-- [ ] Parse `BLOCKS` section.
-- [ ] Parse `ENTITIES` section.
-- [ ] Parse `OBJECTS` section.
+-   [x] Parse `HEADER` section.
+-   [x] Parse `CLASSES` section.
+-   [x] Parse `TABLES` section.
+-   [ ] Parse `BLOCKS` section.
+-   [ ] Parse `ENTITIES` section.
+-   [ ] Parse `OBJECTS` section.
+
+## Contributors
+
+<a href="https://github.com/dxfjs/parser/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=dxfjs/parser" />
+</a>
