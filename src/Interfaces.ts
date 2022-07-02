@@ -293,7 +293,7 @@ export interface DxfGlobalObject {
         solid3ds: Solid3DEntity[];
         solids: SolidEntity[];
         circles: CircleEntity[];
-        ellipse: EllipseEntity[];
+        ellipses: EllipseEntity[];
         lwPolylines: LWPolylineEntity[];
     };
 }
