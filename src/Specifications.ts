@@ -175,7 +175,9 @@ ClassSpec.set(280, 'wasProxyFlag');
 ClassSpec.set(281, 'isEntityFlag');
 
 export const EntityCommonsSpec: SpecificationMap = new Map();
-extend(EntityCommonsSpec, CommonsSpec);
+EntityCommonsSpec.set(5, 'handle');
+EntityCommonsSpec.set(330, 'ownerBlockRecordHandle');
+EntityCommonsSpec.set(100, 'subclassMarker');
 EntityCommonsSpec.set(67, 'inPaperSpace');
 EntityCommonsSpec.set(410, 'layoutTabName');
 EntityCommonsSpec.set(8, 'layerName');
@@ -253,3 +255,42 @@ SolidEntitySpec.set(13, 'fourthX');
 SolidEntitySpec.set(23, 'fourthY');
 SolidEntitySpec.set(33, 'fourthZ');
 SolidEntitySpec.set(39, 'thickness');
+
+// CIRCLE
+export const CircleEntitySpec: SpecificationMap = new Map();
+extend(CircleEntitySpec, EntityCommonsSpec);
+CircleEntitySpec.set(39, 'thickness');
+CircleEntitySpec.set(10, 'centerX');
+CircleEntitySpec.set(20, 'centerY');
+CircleEntitySpec.set(30, 'centerZ');
+CircleEntitySpec.set(40, 'radius');
+
+// ELLIPSE
+export const EllipseEntitySpec: SpecificationMap = new Map();
+extend(EllipseEntitySpec, EntityCommonsSpec);
+EllipseEntitySpec.set(10, 'centerX');
+EllipseEntitySpec.set(20, 'centerY');
+EllipseEntitySpec.set(30, 'centerZ');
+EllipseEntitySpec.set(11, 'majorAxisX');
+EllipseEntitySpec.set(21, 'majorAxisY');
+EllipseEntitySpec.set(31, 'majorAxisZ');
+EllipseEntitySpec.set(40, 'ratioOfMinorAxisToMajorAxis');
+EllipseEntitySpec.set(41, 'startParameter');
+EllipseEntitySpec.set(42, 'endParameter');
+
+// LWPOLYLINE
+export const LWPolylineEntitySpec: SpecificationMap = new Map();
+extend(LWPolylineEntitySpec, EntityCommonsSpec);
+LWPolylineEntitySpec.set(90, 'numberOfVertices');
+LWPolylineEntitySpec.set(70, 'flag');
+LWPolylineEntitySpec.set(43, 'constantWidth');
+LWPolylineEntitySpec.set(38, 'elevation');
+LWPolylineEntitySpec.set(39, 'thickness');
+
+// LWPOLYLINE vertex
+export const LWPolylineVertexSpec: SpecificationMap = new Map();
+LWPolylineVertexSpec.set(10, 'x');
+LWPolylineVertexSpec.set(20, 'y');
+LWPolylineVertexSpec.set(40, 'startingWidth');
+LWPolylineVertexSpec.set(41, 'endWidth');
+LWPolylineVertexSpec.set(42, 'bulge');

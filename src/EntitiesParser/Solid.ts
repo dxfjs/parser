@@ -12,14 +12,14 @@ export class Solid extends ParserBase {
     }
 
     parse(tk: Tokenizer): void {
-        const face: SolidEntity = {} as SolidEntity;
-        face.subclassMarker = [];
+        const solid: SolidEntity = {} as SolidEntity;
+        solid.subclassMarker = [];
         while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
             if (tk.existInSpec(SolidEntitySpec)) {
-                defineProperty(tk, face, SolidEntitySpec);
-            }
+                defineProperty(tk, solid, SolidEntitySpec);
+            } else tk.unexpected('code', tk.cline);
         }
-        this.solids.push(face);
+        this.solids.push(solid);
     }
 
     match(tk: Tokenizer): boolean {

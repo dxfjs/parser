@@ -30,9 +30,9 @@ pnpm run example
     - [ ] ATTDEF
     - [ ] ATTRIB
     - [ ] BODY
-    - [ ] CIRCLE
+    - [x] CIRCLE
     - [ ] DIMENSION
-    - [ ] ELLIPSE
+    - [x] ELLIPSE
     - [ ] HATCH
     - [ ] HELIX
     - [ ] IMAGE
@@ -40,7 +40,7 @@ pnpm run example
     - [ ] LEADER
     - [ ] LIGHT
     - [ ] LINE
-    - [ ] LWPOLYLINE
+    - [x] LWPOLYLINE
     - [ ] MESH
     - [ ] MLINE
     - [ ] MLEADERSTYLE

@@ -207,6 +207,9 @@ export class EntitiesParser extends ParserBase {
                 ...this.face3D.objectify(),
                 ...this.solid3D.objectify(),
                 ...this.solid.objectify(),
+                ...this.circle.objectify(),
+                ...this.ellipse.objectify(),
+                ...this.lwPolyline.objectify(),
             },
         };
     }

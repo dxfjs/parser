@@ -164,7 +164,7 @@ export interface ClassRecord {
 
 export interface EntityCommons {
     handle: string;
-    ownerObjectHandle: string;
+    ownerBlockRecordHandle: string;
     subclassMarker: string[];
     inPaperSpace?: number;
     layoutTabName?: string;
@@ -239,6 +239,43 @@ export interface SolidEntity extends EntityCommons {
     thickness?: number;
 }
 
+export interface CircleEntity extends EntityCommons {
+    thickness?: number;
+    centerX: number;
+    centerY: number;
+    centerZ: number;
+    radius: number;
+}
+
+export interface EllipseEntity extends EntityCommons {
+    centerX: number;
+    centerY: number;
+    centerZ: number;
+    majorAxisX: number;
+    majorAxisY: number;
+    majorAxisZ: number;
+    ratioOfMinorAxisToMajorAxis: number;
+    startParameter: number;
+    endParameter: number;
+}
+
+export interface LWPolylineVertex {
+    x: number;
+    y: number;
+    startingWidth: number;
+    endWidth: number;
+    bulge: number;
+}
+
+export interface LWPolylineEntity extends EntityCommons {
+    numberOfVertices: number;
+    flag: number;
+    constantWidth: number;
+    elevation: number;
+    thickness: number;
+    vertices: LWPolylineVertex[];
+}
+
 export interface DxfGlobalObject {
     header: DxfObj;
     tables: {
@@ -255,5 +292,8 @@ export interface DxfGlobalObject {
         arcs: ArcEntity[];
         solid3ds: Solid3DEntity[];
         solids: SolidEntity[];
+        circles: CircleEntity[];
+        ellipse: EllipseEntity[];
+        lwPolylines: LWPolylineEntity[];
     };
 }
