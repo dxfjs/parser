@@ -139,6 +139,13 @@ exports[`Parser class > should have a stable parsing 1`] = `
       "wasProxyFlag": 0,
     },
   ],
+  "entities": {
+    "arcs": [],
+    "face3ds": [],
+    "points": [],
+    "solid3ds": [],
+    "solids": [],
+  },
   "header": {
     "$3DDWFPREC": 2,
     "$ACADMAINTVER": 50,
