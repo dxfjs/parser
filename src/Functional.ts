@@ -178,7 +178,7 @@ export function defineProperty(
         if (Array.isArray(obj[property])) {
             (obj[property] as any[]).push(value(token));
         } else {
-            if (obj[property]) tk.unexpected('code', tk.cline);
+            if (obj[property]) tk.unexpected('code', token.line);
             obj[property] = value(token);
         }
     } else {

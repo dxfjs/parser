@@ -162,6 +162,83 @@ export interface ClassRecord {
     isEntityFlag: number;
 }
 
+export interface EntityCommons {
+    handle: string;
+    ownerObjectHandle: string;
+    subclassMarker: string[];
+    inPaperSpace?: number;
+    layoutTabName?: string;
+    layerName?: string;
+    linetypeName?: string;
+    materialObjectHandle?: string;
+    colorNumber?: number;
+    lineweightEnumValue?: number;
+    linetypeScale?: number;
+    visibilty?: boolean;
+    trueColor?: number;
+    colorName?: string;
+    transparency?: number;
+    plotstyleObjectHandle?: string;
+    shadowMode?: number;
+}
+
+export interface PointEntity extends EntityCommons {
+    x: number;
+    y: number;
+    z: number;
+    thickness?: number;
+    xAxisAngle?: number;
+}
+
+export interface ArcEntity extends EntityCommons {
+    thickness?: number;
+    centerX: number;
+    centerY: number;
+    centerZ: number;
+    radius: number;
+    startAngle: number;
+    endAngle: number;
+}
+
+export interface Face3DEntity extends EntityCommons {
+    firstX: number;
+    firstY: number;
+    firstZ: number;
+    secondX: number;
+    secondY: number;
+    secondZ: number;
+    thirdX: number;
+    thirdY: number;
+    thirdZ: number;
+    fourthX: number;
+    fourthY: number;
+    fourthZ: number;
+    invisibleEdgeFlag?: number;
+}
+
+export interface Solid3DEntity extends EntityCommons {
+    modelerFormatVersion: number;
+    proprietaryData: string[];
+    lastProprietrayData: string;
+    historyObjectHandle: string;
+}
+
+export interface SolidEntity extends EntityCommons {
+    firstX: number;
+    firstY: number;
+    firstZ: number;
+    secondX: number;
+    secondY: number;
+    secondZ: number;
+    thirdX: number;
+    thirdY: number;
+    thirdZ: number;
+    fourthX: number;
+    fourthY: number;
+    fourthZ: number;
+    thickness?: number;
+}
+
 export interface DxfGlobalObject {
     header: DxfObj;
     tables: {
@@ -173,4 +250,10 @@ export interface DxfGlobalObject {
         style: TableCommons<Partial<StyleRecord>, false>;
     };
     classes: ClassRecord[];
+    entities: {
+        points: PointEntity[];
+        arcs: ArcEntity[];
+        solid3ds: Solid3DEntity[];
+        solids: SolidEntity[];
+    };
 }

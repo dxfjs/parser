@@ -83,6 +83,8 @@ export class Tokenizer {
     }
 
     unexpected(value: string, line: number): void {
+        console.log(this.peek());
+
         if (!this.hasError()) this.error = unexpected(value, line);
     }
 

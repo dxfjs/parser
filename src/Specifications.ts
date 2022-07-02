@@ -173,3 +173,83 @@ ClassSpec.set(90, 'proxyFlag');
 ClassSpec.set(91, 'instanceCount');
 ClassSpec.set(280, 'wasProxyFlag');
 ClassSpec.set(281, 'isEntityFlag');
+
+export const EntityCommonsSpec: SpecificationMap = new Map();
+extend(EntityCommonsSpec, CommonsSpec);
+EntityCommonsSpec.set(67, 'inPaperSpace');
+EntityCommonsSpec.set(410, 'layoutTabName');
+EntityCommonsSpec.set(8, 'layerName');
+EntityCommonsSpec.set(6, 'linetypeName');
+EntityCommonsSpec.set(347, 'materialObjectHandle');
+EntityCommonsSpec.set(62, 'colorNumber');
+EntityCommonsSpec.set(370, 'lineweightEnumValue');
+EntityCommonsSpec.set(48, 'linetypeScale');
+EntityCommonsSpec.set(60, 'visibilty');
+// TODO Codes 92 and 310
+EntityCommonsSpec.set(420, 'trueColor');
+EntityCommonsSpec.set(430, 'colorName');
+EntityCommonsSpec.set(440, 'transparency');
+EntityCommonsSpec.set(390, 'plotstyleObjectHandle');
+EntityCommonsSpec.set(284, 'shadowMode');
+
+// POINT
+export const PointEntitySpec: SpecificationMap = new Map();
+extend(PointEntitySpec, EntityCommonsSpec);
+PointEntitySpec.set(10, 'x');
+PointEntitySpec.set(20, 'y');
+PointEntitySpec.set(30, 'z');
+PointEntitySpec.set(39, 'thickness');
+PointEntitySpec.set(50, 'xAxisAngle');
+
+// ARC
+export const ArcEntitySpec: SpecificationMap = new Map();
+extend(ArcEntitySpec, EntityCommonsSpec);
+ArcEntitySpec.set(39, 'thickness');
+ArcEntitySpec.set(10, 'centerX');
+ArcEntitySpec.set(20, 'centerY');
+ArcEntitySpec.set(30, 'centerZ');
+ArcEntitySpec.set(40, 'radius');
+ArcEntitySpec.set(50, 'startAngle');
+ArcEntitySpec.set(51, 'endAngle');
+
+// 3DFACE
+export const Face3DEntitySpec: SpecificationMap = new Map();
+extend(Face3DEntitySpec, EntityCommonsSpec);
+Face3DEntitySpec.set(10, 'firstX');
+Face3DEntitySpec.set(20, 'firstY');
+Face3DEntitySpec.set(30, 'firstZ');
+Face3DEntitySpec.set(11, 'secondX');
+Face3DEntitySpec.set(21, 'secondY');
+Face3DEntitySpec.set(31, 'secondZ');
+Face3DEntitySpec.set(12, 'thirdX');
+Face3DEntitySpec.set(22, 'thirdY');
+Face3DEntitySpec.set(32, 'thirdZ');
+Face3DEntitySpec.set(13, 'fourthX');
+Face3DEntitySpec.set(23, 'fourthY');
+Face3DEntitySpec.set(33, 'fourthZ');
+Face3DEntitySpec.set(70, 'invisibleEdgeFlag');
+
+// 3DSOLID
+export const Solid3DEntitySpec: SpecificationMap = new Map();
+extend(Solid3DEntitySpec, EntityCommonsSpec);
+Solid3DEntitySpec.set(70, 'modelerFormatVersion');
+Solid3DEntitySpec.set(1, 'proprietaryData');
+Solid3DEntitySpec.set(3, 'lastProprietrayData');
+Solid3DEntitySpec.set(350, 'historyObjectHandle');
+
+// SOLID
+export const SolidEntitySpec: SpecificationMap = new Map();
+extend(SolidEntitySpec, EntityCommonsSpec);
+SolidEntitySpec.set(10, 'firstX');
+SolidEntitySpec.set(20, 'firstY');
+SolidEntitySpec.set(30, 'firstZ');
+SolidEntitySpec.set(11, 'secondX');
+SolidEntitySpec.set(21, 'secondY');
+SolidEntitySpec.set(31, 'secondZ');
+SolidEntitySpec.set(12, 'thirdX');
+SolidEntitySpec.set(22, 'thirdY');
+SolidEntitySpec.set(32, 'thirdZ');
+SolidEntitySpec.set(13, 'fourthX');
+SolidEntitySpec.set(23, 'fourthY');
+SolidEntitySpec.set(33, 'fourthZ');
+SolidEntitySpec.set(39, 'thickness');

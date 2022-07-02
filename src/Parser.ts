@@ -45,6 +45,7 @@ export class Parser {
                 ...this.header.objectify(),
                 ...this.tables.objectify(),
                 ...this.classes.objectify(),
+                ...this.entities.objectify(),
             });
         });
     }
