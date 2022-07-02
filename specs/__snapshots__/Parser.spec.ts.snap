@@ -141,7 +141,10 @@ exports[`Parser class > should have a stable parsing 1`] = `
   ],
   "entities": {
     "arcs": [],
+    "circles": [],
+    "ellipses": [],
     "face3ds": [],
+    "lwPolylines": [],
     "points": [],
     "solid3ds": [],
     "solids": [],
