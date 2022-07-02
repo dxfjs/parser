@@ -16,15 +16,58 @@ pnpm run example
 
 ## Progress
 
--   [x] Parse `HEADER` section.
--   [x] Parse `CLASSES` section.
--   [x] Parse `TABLES` section.
--   [ ] Parse `BLOCKS` section.
--   [ ] Parse `ENTITIES` section.
--   [ ] Parse `OBJECTS` section.
-
-## Contributors
-
-<a href="https://github.com/dxfjs/parser/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=dxfjs/parser" />
-</a>
+- [x] Parse `HEADER` section.
+- [x] Parse `CLASSES` section.
+- [x] Parse `TABLES` section.
+- [ ] Parse `BLOCKS` section.
+- [x] Parse `ENTITIES` section.
+    <details><summary>Supported entities</summary>
+  
+    - [x] 3DFACE
+    - [x] 3DSOLID
+    - [ ] ACAD_PROXY_ENTITY
+    - [x] ARC
+    - [ ] ATTDEF
+    - [ ] ATTRIB
+    - [ ] BODY
+    - [ ] CIRCLE
+    - [ ] DIMENSION
+    - [ ] ELLIPSE
+    - [ ] HATCH
+    - [ ] HELIX
+    - [ ] IMAGE
+    - [ ] INSERT
+    - [ ] LEADER
+    - [ ] LIGHT
+    - [ ] LINE
+    - [ ] LWPOLYLINE
+    - [ ] MESH
+    - [ ] MLINE
+    - [ ] MLEADERSTYLE
+    - [ ] MLEADER
+    - [ ] MTEXT
+    - [ ] OLEFRAME
+    - [ ] OLE2FRAME
+    - [x] POINT
+    - [ ] POLYLINE
+    - [ ] RAY
+    - [ ] REGION
+    - [ ] SECTION
+    - [ ] SEQEND
+    - [ ] SHAPE
+    - [x] SOLID
+    - [ ] SPLINE
+    - [ ] SUN
+    - [ ] SURFACE
+    - [ ] TABLE
+    - [ ] TEXT
+    - [ ] TOLERANCE
+    - [ ] TRACE
+    - [ ] UNDERLAY
+    - [ ] VERTEX
+    - [ ] VIEWPORT
+    - [ ] WIPEOUT
+    - [ ] XLINE
+  
+    </details>
+- [ ] Parse `OBJECTS` section.
