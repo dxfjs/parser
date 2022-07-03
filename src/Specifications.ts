@@ -294,3 +294,34 @@ LWPolylineVertexSpec.set(20, 'y');
 LWPolylineVertexSpec.set(40, 'startingWidth');
 LWPolylineVertexSpec.set(41, 'endWidth');
 LWPolylineVertexSpec.set(42, 'bulge');
+
+// LINE
+export const LineEntitySpec: SpecificationMap = new Map();
+extend(LineEntitySpec, EntityCommonsSpec);
+LineEntitySpec.set(39, 'thickness');
+LineEntitySpec.set(10, 'startX');
+LineEntitySpec.set(20, 'startY');
+LineEntitySpec.set(30, 'startZ');
+LineEntitySpec.set(11, 'endX');
+LineEntitySpec.set(21, 'endY');
+LineEntitySpec.set(31, 'endZ');
+
+// TEXT
+export const TextEntitySpec: SpecificationMap = new Map();
+extend(TextEntitySpec, EntityCommonsSpec);
+TextEntitySpec.set(39, 'thickness');
+TextEntitySpec.set(10, 'firstAlignmentX');
+TextEntitySpec.set(20, 'firstAlignmentY');
+TextEntitySpec.set(30, 'firstAlignmentZ');
+TextEntitySpec.set(40, 'textHeight');
+TextEntitySpec.set(1, 'text');
+TextEntitySpec.set(50, 'rotation');
+TextEntitySpec.set(41, 'factorWidth');
+TextEntitySpec.set(51, 'obliqueAngle');
+TextEntitySpec.set(7, 'styleName');
+TextEntitySpec.set(71, 'generationFlags');
+TextEntitySpec.set(72, 'horizontalJustification');
+TextEntitySpec.set(11, 'secondAlignmentendX');
+TextEntitySpec.set(21, 'secondAlignmentendY');
+TextEntitySpec.set(31, 'secondAlignmentendZ');
+TextEntitySpec.set(73, 'verticalJustification');

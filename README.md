@@ -39,7 +39,7 @@ pnpm run example
     - [ ] INSERT
     - [ ] LEADER
     - [ ] LIGHT
-    - [ ] LINE
+    - [x] LINE
     - [x] LWPOLYLINE
     - [ ] MESH
     - [ ] MLINE
@@ -60,7 +60,7 @@ pnpm run example
     - [ ] SUN
     - [ ] SURFACE
     - [ ] TABLE
-    - [ ] TEXT
+    - [x] TEXT
     - [ ] TOLERANCE
     - [ ] TRACE
     - [ ] UNDERLAY

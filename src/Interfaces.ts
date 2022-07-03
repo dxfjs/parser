@@ -276,6 +276,35 @@ export interface LWPolylineEntity extends EntityCommons {
     vertices: LWPolylineVertex[];
 }
 
+export interface LineEntity extends EntityCommons {
+    thickness: number;
+    startX: number;
+    startY: number;
+    startZ: number;
+    endX: number;
+    endY: number;
+    endZ: number;
+}
+
+export interface TextEntity extends EntityCommons {
+    thickness: number;
+    firstAlignmentX: number;
+    firstAlignmentY: number;
+    firstAlignmentZ: number;
+    textHeight: number;
+    text: string;
+    rotation: number;
+    factorWidth: number;
+    obliqueAngle: number;
+    styleName: string;
+    generationFlags: number;
+    horizontalJustification: number;
+    secondAlignmentendX: number;
+    secondAlignmentendY: number;
+    secondAlignmentendZ: number;
+    verticalJustification: number;
+}
+
 export interface DxfGlobalObject {
     header: DxfObj;
     tables: {
@@ -295,5 +324,7 @@ export interface DxfGlobalObject {
         circles: CircleEntity[];
         ellipses: EllipseEntity[];
         lwPolylines: LWPolylineEntity[];
+        lines: LineEntity[];
+        texts: TextEntity[];
     };
 }

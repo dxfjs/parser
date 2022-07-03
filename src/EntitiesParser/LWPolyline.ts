@@ -15,12 +15,12 @@ export class LWPolyline extends ParserBase {
         const lwPolyline: LWPolylineEntity = {} as LWPolylineEntity;
         lwPolyline.subclassMarker = [];
         lwPolyline.vertices = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.is(code(10))) {
                 this.parseVertex(tk, lwPolyline);
             } else if (tk.existInSpec(LWPolylineEntitySpec)) {
                 defineProperty(tk, lwPolyline, LWPolylineEntitySpec);
-            } else tk.unexpected('code', tk.cline);
+            } else tk.next();
         }
         this.lwPolylines.push(lwPolyline);
     }
@@ -30,8 +30,12 @@ export class LWPolyline extends ParserBase {
         do {
             if (tk.existInSpec(LWPolylineVertexSpec)) {
                 defineProperty(tk, vertex, LWPolylineVertexSpec);
-            } else tk.unexpected('code', tk.cline);
-        } while (tk.isNotSectionOrEof() && !tk.is(cZero) && !tk.is(code(10)));
+            } else tk.next();
+        } while (
+            tk.isNotSectionOrEof() &&
+            tk.isNot(cZero) &&
+            tk.isNot(code(10))
+        );
         lwPolyline.vertices.push(vertex);
     }
 

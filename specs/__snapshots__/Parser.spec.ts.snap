@@ -144,10 +144,12 @@ exports[`Parser class > should have a stable parsing 1`] = `
     "circles": [],
     "ellipses": [],
     "face3ds": [],
+    "lines": [],
     "lwPolylines": [],
     "points": [],
     "solid3ds": [],
     "solids": [],
+    "texts": [],
   },
   "header": {
     "$3DDWFPREC": 2,
