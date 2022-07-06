@@ -11,7 +11,7 @@ import { RecordCommons, TableCommons } from '../Interfaces';
 import { ParserBase } from '../ParserBase';
 import { TableCommonsSpec } from '../Specifications';
 import { Tokenizer } from '../Tokenizer';
-import { SpecificationMap } from '../Types';
+import { spec_t } from '../Types';
 
 export class TableParser<
     Record extends RecordCommons,
@@ -19,13 +19,9 @@ export class TableParser<
 > extends ParserBase {
     protected commonsParsed: boolean;
     readonly table: TableCommons<Partial<Record>, Multi>;
-    readonly spec: SpecificationMap;
+    readonly spec: spec_t;
 
-    constructor(
-        name: string,
-        spec: SpecificationMap,
-        multipleSubclassMarkers = false
-    ) {
+    constructor(name: string, spec: spec_t, multipleSubclassMarkers = false) {
         super(name);
         this.spec = spec;
         this.commonsParsed = false;

@@ -9,7 +9,7 @@ import {
     tokens,
     unexpected,
 } from './Functional';
-import { matcher_t, SpecificationMap, tokens_t, token_t } from './Types';
+import { matcher_t, spec_t, tokens_t, token_t } from './Types';
 
 export class Tokenizer {
     readonly tokens: tokens_t = [];
@@ -70,7 +70,7 @@ export class Tokenizer {
         return this.isNotSectionOrEof() && !this.is(table) && !this.is(endtab);
     }
 
-    existInSpec(spec: SpecificationMap): boolean {
+    existInSpec(spec: spec_t): boolean {
         return spec.has(this.peek().code);
     }
 

@@ -29,17 +29,14 @@ pnpm run example
     - [x] CIRCLE
     - [x] ELLIPSE
     - [ ] HATCH
-    - [ ] IMAGE
     - [ ] INSERT
     - [x] LINE
     - [x] LWPOLYLINE
     - [x] POINT
     - [ ] POLYLINE
-    - [ ] SEQEND
     - [x] SOLID
-    - [ ] SPLINE
+    - [x] SPLINE
     - [x] TEXT
-    - [ ] VERTEX
   
     </details>
 - [ ] Parse `OBJECTS` section.

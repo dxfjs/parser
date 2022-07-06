@@ -1,11 +1,5 @@
 import { Tokenizer } from './Tokenizer';
-import {
-    DxfObj,
-    matcher_t,
-    SpecificationMap,
-    tokens_t,
-    token_t,
-} from './Types';
+import { obj_t, matcher_t, spec_t, tokens_t, token_t } from './Types';
 
 /**
  * Trim an split dxf content into trimmed lines.
@@ -167,11 +161,7 @@ export function last<T>(arr: T[]) {
     return arr[arr.length - 1];
 }
 
-export function defineProperty(
-    tk: Tokenizer,
-    obj: DxfObj,
-    spec: SpecificationMap
-): void {
+export function defineProperty(tk: Tokenizer, obj: obj_t, spec: spec_t): void {
     const token = tk.next();
     if (spec.has(token.code)) {
         const property = spec.get(token.code) as string;

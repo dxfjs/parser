@@ -14,7 +14,7 @@ export class Point extends ParserBase {
     parse(tk: Tokenizer): void {
         const point: PointEntity = {} as PointEntity;
         point.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(PointEntitySpec)) {
                 defineProperty(tk, point, PointEntitySpec);
             } else tk.unexpected('code', tk.cline);

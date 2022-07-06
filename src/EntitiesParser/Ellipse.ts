@@ -14,7 +14,7 @@ export class Ellipse extends ParserBase {
     parse(tk: Tokenizer): void {
         const ellipse: EllipseEntity = {} as EllipseEntity;
         ellipse.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(EllipseEntitySpec)) {
                 defineProperty(tk, ellipse, EllipseEntitySpec);
             } else tk.unexpected('code', tk.cline);

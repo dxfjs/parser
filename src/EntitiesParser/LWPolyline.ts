@@ -25,7 +25,7 @@ export class LWPolyline extends ParserBase {
         this.lwPolylines.push(lwPolyline);
     }
 
-    parseVertex(tk: Tokenizer, lwPolyline: LWPolylineEntity) {
+    private parseVertex(tk: Tokenizer, lwPolyline: LWPolylineEntity) {
         const vertex: LWPolylineVertex = {} as LWPolylineVertex;
         do {
             if (tk.existInSpec(LWPolylineVertexSpec)) {

@@ -8,7 +8,7 @@ export class Polyline extends ParserBase {
     }
 
     parse(tk: Tokenizer): void {
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             tk.next();
         }
     }

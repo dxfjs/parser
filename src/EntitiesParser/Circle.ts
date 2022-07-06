@@ -14,7 +14,7 @@ export class Circle extends ParserBase {
     parse(tk: Tokenizer): void {
         const circle: CircleEntity = {} as CircleEntity;
         circle.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(CircleEntitySpec)) {
                 defineProperty(tk, circle, CircleEntitySpec);
             } else tk.unexpected('code', tk.cline);

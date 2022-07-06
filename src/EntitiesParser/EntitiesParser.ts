@@ -11,7 +11,6 @@ import { Point } from './Point';
 import { LWPolyline } from './LWPolyline';
 import { Line } from './Line';
 import { Insert } from './Insert';
-import { Image } from './Image';
 import { Hatch } from './Hatch';
 import { Ellipse } from './Ellipse';
 import { Circle } from './Circle';
@@ -26,7 +25,6 @@ export class EntitiesParser extends ParserBase {
     circle: Circle;
     ellipse: Ellipse;
     hatch: Hatch;
-    image: Image;
     insert: Insert;
     line: Line;
     lwPolyline: LWPolyline;
@@ -45,7 +43,6 @@ export class EntitiesParser extends ParserBase {
         this.circle = new Circle();
         this.ellipse = new Ellipse();
         this.hatch = new Hatch();
-        this.image = new Image();
         this.insert = new Insert();
         this.line = new Line();
         this.lwPolyline = new LWPolyline();
@@ -66,7 +63,6 @@ export class EntitiesParser extends ParserBase {
             else if (this.circle.match(tk)) this.circle.parse(tk);
             else if (this.ellipse.match(tk)) this.ellipse.parse(tk);
             else if (this.hatch.match(tk)) this.hatch.parse(tk);
-            else if (this.image.match(tk)) this.image.parse(tk);
             else if (this.insert.match(tk)) this.insert.parse(tk);
             else if (this.line.match(tk)) this.line.parse(tk);
             else if (this.lwPolyline.match(tk)) this.lwPolyline.parse(tk);
@@ -97,6 +93,7 @@ export class EntitiesParser extends ParserBase {
                 ...this.lwPolyline.objectify(),
                 ...this.line.objectify(),
                 ...this.text.objectify(),
+                ...this.spline.objectify(),
             },
         };
     }

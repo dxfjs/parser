@@ -14,7 +14,7 @@ export class Arc extends ParserBase {
     parse(tk: Tokenizer): void {
         const arc: ArcEntity = {} as ArcEntity;
         arc.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(ArcEntitySpec)) {
                 defineProperty(tk, arc, ArcEntitySpec);
             } else tk.unexpected('code', tk.cline);

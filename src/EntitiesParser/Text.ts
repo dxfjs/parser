@@ -14,7 +14,7 @@ export class Text extends ParserBase {
     parse(tk: Tokenizer): void {
         const text: TextEntity = {} as TextEntity;
         text.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(TextEntitySpec)) {
                 defineProperty(tk, text, TextEntitySpec);
             } else tk.next();

@@ -14,7 +14,7 @@ export class Solid extends ParserBase {
     parse(tk: Tokenizer): void {
         const solid: SolidEntity = {} as SolidEntity;
         solid.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(SolidEntitySpec)) {
                 defineProperty(tk, solid, SolidEntitySpec);
             } else tk.unexpected('code', tk.cline);

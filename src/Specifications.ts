@@ -1,31 +1,31 @@
-import { SpecificationMap } from './Types';
+import { spec_t } from './Types';
 
-export function extend(target: SpecificationMap, from: SpecificationMap) {
+export function extend(target: spec_t, from: spec_t) {
     from.forEach((value, key) => {
         target.set(key, value);
     });
 }
 
-export const CommonsSpec: SpecificationMap = new Map();
+export const CommonsSpec: spec_t = new Map();
 CommonsSpec.set(5, 'handle');
 CommonsSpec.set(330, 'ownerObjectHandle');
 CommonsSpec.set(100, 'subclassMarker');
 
-export const TableCommonsSpec: SpecificationMap = new Map();
+export const TableCommonsSpec: spec_t = new Map();
 extend(TableCommonsSpec, CommonsSpec);
 TableCommonsSpec.set(70, 'numberOfRecords');
 
-export const TableRecordCommonsSpec: SpecificationMap = new Map();
+export const TableRecordCommonsSpec: spec_t = new Map();
 extend(TableRecordCommonsSpec, CommonsSpec);
 
 // APPID
-export const AppIdRecordSpec: SpecificationMap = new Map();
+export const AppIdRecordSpec: spec_t = new Map();
 extend(AppIdRecordSpec, TableRecordCommonsSpec);
 AppIdRecordSpec.set(2, 'name');
 AppIdRecordSpec.set(70, 'flags');
 
 // BLOCK_RECORD
-export const BlockRecordSpec: SpecificationMap = new Map();
+export const BlockRecordSpec: spec_t = new Map();
 extend(BlockRecordSpec, TableRecordCommonsSpec);
 BlockRecordSpec.set(2, 'name');
 BlockRecordSpec.set(340, 'layoutObject');
@@ -34,7 +34,7 @@ BlockRecordSpec.set(281, 'scalability');
 BlockRecordSpec.set(70, 'insertionUnits');
 
 // LAYER
-export const LayerRecordSpec: SpecificationMap = new Map();
+export const LayerRecordSpec: spec_t = new Map();
 extend(LayerRecordSpec, TableRecordCommonsSpec);
 LayerRecordSpec.set(2, 'name');
 LayerRecordSpec.set(70, 'flags');
@@ -46,7 +46,7 @@ LayerRecordSpec.set(390, 'plotStyleNameObject');
 LayerRecordSpec.set(347, 'materialObject');
 
 // DIMSTYLE
-export const DimStyleRecordSpec: SpecificationMap = new Map();
+export const DimStyleRecordSpec: spec_t = new Map();
 extend(DimStyleRecordSpec, TableRecordCommonsSpec);
 DimStyleRecordSpec.delete(5);
 DimStyleRecordSpec.set(105, 'handle');
@@ -123,7 +123,7 @@ DimStyleRecordSpec.set(371, 'DIMLWD');
 DimStyleRecordSpec.set(372, 'DIMLWE');
 
 // STYLE
-export const StyleRecordSpec: SpecificationMap = new Map();
+export const StyleRecordSpec: spec_t = new Map();
 extend(StyleRecordSpec, TableRecordCommonsSpec);
 StyleRecordSpec.set(2, 'name');
 StyleRecordSpec.set(70, 'flags');
@@ -137,7 +137,7 @@ StyleRecordSpec.set(4, 'bigFontFile');
 StyleRecordSpec.set(1071, 'trueTypeFont');
 
 // LTYPE
-export const LTypeRecordSpec: SpecificationMap = new Map();
+export const LTypeRecordSpec: spec_t = new Map();
 extend(LTypeRecordSpec, TableRecordCommonsSpec);
 LTypeRecordSpec.set(2, 'name');
 LTypeRecordSpec.set(70, 'flags');
@@ -147,7 +147,7 @@ LTypeRecordSpec.set(73, 'numberOfElements');
 LTypeRecordSpec.set(40, 'patternLength');
 
 // LTYPE Element
-export const LTypeElementSpec: SpecificationMap = new Map();
+export const LTypeElementSpec: spec_t = new Map();
 LTypeElementSpec.set(49, 'length');
 LTypeElementSpec.set(74, 'complexType');
 LTypeElementSpec.set(75, 'shapeNumber');
@@ -159,13 +159,13 @@ LTypeElementSpec.set(45, 'offsetY');
 LTypeElementSpec.set(9, 'text');
 
 // Point
-export const PointSpec: SpecificationMap = new Map();
+export const PointSpec: spec_t = new Map();
 PointSpec.set(10, 'x');
 PointSpec.set(20, 'y');
 PointSpec.set(30, 'z');
 
 // CLASS
-export const ClassSpec: SpecificationMap = new Map();
+export const ClassSpec: spec_t = new Map();
 ClassSpec.set(1, 'recordName');
 ClassSpec.set(2, 'className');
 ClassSpec.set(3, 'applicationName');
@@ -174,7 +174,7 @@ ClassSpec.set(91, 'instanceCount');
 ClassSpec.set(280, 'wasProxyFlag');
 ClassSpec.set(281, 'isEntityFlag');
 
-export const EntityCommonsSpec: SpecificationMap = new Map();
+export const EntityCommonsSpec: spec_t = new Map();
 EntityCommonsSpec.set(5, 'handle');
 EntityCommonsSpec.set(330, 'ownerBlockRecordHandle');
 EntityCommonsSpec.set(100, 'subclassMarker');
@@ -195,7 +195,7 @@ EntityCommonsSpec.set(390, 'plotstyleObjectHandle');
 EntityCommonsSpec.set(284, 'shadowMode');
 
 // POINT
-export const PointEntitySpec: SpecificationMap = new Map();
+export const PointEntitySpec: spec_t = new Map();
 extend(PointEntitySpec, EntityCommonsSpec);
 PointEntitySpec.set(10, 'x');
 PointEntitySpec.set(20, 'y');
@@ -204,7 +204,7 @@ PointEntitySpec.set(39, 'thickness');
 PointEntitySpec.set(50, 'xAxisAngle');
 
 // ARC
-export const ArcEntitySpec: SpecificationMap = new Map();
+export const ArcEntitySpec: spec_t = new Map();
 extend(ArcEntitySpec, EntityCommonsSpec);
 ArcEntitySpec.set(39, 'thickness');
 ArcEntitySpec.set(10, 'centerX');
@@ -215,7 +215,7 @@ ArcEntitySpec.set(50, 'startAngle');
 ArcEntitySpec.set(51, 'endAngle');
 
 // 3DFACE
-export const Face3DEntitySpec: SpecificationMap = new Map();
+export const Face3DEntitySpec: spec_t = new Map();
 extend(Face3DEntitySpec, EntityCommonsSpec);
 Face3DEntitySpec.set(10, 'firstX');
 Face3DEntitySpec.set(20, 'firstY');
@@ -232,7 +232,7 @@ Face3DEntitySpec.set(33, 'fourthZ');
 Face3DEntitySpec.set(70, 'invisibleEdgeFlag');
 
 // 3DSOLID
-export const Solid3DEntitySpec: SpecificationMap = new Map();
+export const Solid3DEntitySpec: spec_t = new Map();
 extend(Solid3DEntitySpec, EntityCommonsSpec);
 Solid3DEntitySpec.set(70, 'modelerFormatVersion');
 Solid3DEntitySpec.set(1, 'proprietaryData');
@@ -240,7 +240,7 @@ Solid3DEntitySpec.set(3, 'lastProprietrayData');
 Solid3DEntitySpec.set(350, 'historyObjectHandle');
 
 // SOLID
-export const SolidEntitySpec: SpecificationMap = new Map();
+export const SolidEntitySpec: spec_t = new Map();
 extend(SolidEntitySpec, EntityCommonsSpec);
 SolidEntitySpec.set(10, 'firstX');
 SolidEntitySpec.set(20, 'firstY');
@@ -257,7 +257,7 @@ SolidEntitySpec.set(33, 'fourthZ');
 SolidEntitySpec.set(39, 'thickness');
 
 // CIRCLE
-export const CircleEntitySpec: SpecificationMap = new Map();
+export const CircleEntitySpec: spec_t = new Map();
 extend(CircleEntitySpec, EntityCommonsSpec);
 CircleEntitySpec.set(39, 'thickness');
 CircleEntitySpec.set(10, 'centerX');
@@ -266,7 +266,7 @@ CircleEntitySpec.set(30, 'centerZ');
 CircleEntitySpec.set(40, 'radius');
 
 // ELLIPSE
-export const EllipseEntitySpec: SpecificationMap = new Map();
+export const EllipseEntitySpec: spec_t = new Map();
 extend(EllipseEntitySpec, EntityCommonsSpec);
 EllipseEntitySpec.set(10, 'centerX');
 EllipseEntitySpec.set(20, 'centerY');
@@ -279,7 +279,7 @@ EllipseEntitySpec.set(41, 'startParameter');
 EllipseEntitySpec.set(42, 'endParameter');
 
 // LWPOLYLINE
-export const LWPolylineEntitySpec: SpecificationMap = new Map();
+export const LWPolylineEntitySpec: spec_t = new Map();
 extend(LWPolylineEntitySpec, EntityCommonsSpec);
 LWPolylineEntitySpec.set(90, 'numberOfVertices');
 LWPolylineEntitySpec.set(70, 'flag');
@@ -288,7 +288,7 @@ LWPolylineEntitySpec.set(38, 'elevation');
 LWPolylineEntitySpec.set(39, 'thickness');
 
 // LWPOLYLINE vertex
-export const LWPolylineVertexSpec: SpecificationMap = new Map();
+export const LWPolylineVertexSpec: spec_t = new Map();
 LWPolylineVertexSpec.set(10, 'x');
 LWPolylineVertexSpec.set(20, 'y');
 LWPolylineVertexSpec.set(40, 'startingWidth');
@@ -296,7 +296,7 @@ LWPolylineVertexSpec.set(41, 'endWidth');
 LWPolylineVertexSpec.set(42, 'bulge');
 
 // LINE
-export const LineEntitySpec: SpecificationMap = new Map();
+export const LineEntitySpec: spec_t = new Map();
 extend(LineEntitySpec, EntityCommonsSpec);
 LineEntitySpec.set(39, 'thickness');
 LineEntitySpec.set(10, 'startX');
@@ -307,7 +307,7 @@ LineEntitySpec.set(21, 'endY');
 LineEntitySpec.set(31, 'endZ');
 
 // TEXT
-export const TextEntitySpec: SpecificationMap = new Map();
+export const TextEntitySpec: spec_t = new Map();
 extend(TextEntitySpec, EntityCommonsSpec);
 TextEntitySpec.set(39, 'thickness');
 TextEntitySpec.set(10, 'firstAlignmentX');
@@ -327,7 +327,7 @@ TextEntitySpec.set(31, 'secondAlignmentendZ');
 TextEntitySpec.set(73, 'verticalJustification');
 
 // SPLINE
-export const SplineEntitySpec: SpecificationMap = new Map();
+export const SplineEntitySpec: spec_t = new Map();
 extend(SplineEntitySpec, EntityCommonsSpec);
 SplineEntitySpec.set(210, 'normalVectorX');
 SplineEntitySpec.set(220, 'normalVectory');
@@ -346,3 +346,13 @@ SplineEntitySpec.set(32, 'startTangentZ');
 SplineEntitySpec.set(13, 'endTangentX');
 SplineEntitySpec.set(23, 'endTangentY');
 SplineEntitySpec.set(33, 'endTangentZ');
+
+export const SplineControlPointSpec: spec_t = new Map();
+SplineControlPointSpec.set(10, 'x');
+SplineControlPointSpec.set(20, 'y');
+SplineControlPointSpec.set(30, 'z');
+
+export const SplineFitPointSpec: spec_t = new Map();
+SplineFitPointSpec.set(11, 'x');
+SplineFitPointSpec.set(21, 'y');
+SplineFitPointSpec.set(31, 'z');

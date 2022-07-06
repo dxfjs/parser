@@ -1,4 +1,4 @@
-import { DxfObj, tokens_t } from './Types';
+import { obj_t, point_t, tokens_t } from './Types';
 
 export interface UnknownTokens {
     unknowns?: tokens_t;
@@ -305,8 +305,32 @@ export interface TextEntity extends EntityCommons {
     verticalJustification: number;
 }
 
+export interface SplineEntity extends EntityCommons {
+    normalVectorX: number;
+    normalVectory: number;
+    normalVectorZ: number;
+    flags: number;
+    degree: number;
+    numberOfKnots: number;
+    numberOfControlPoints: number;
+    numberOfFitPoints: number;
+    knotTolerance: number;
+    controlPointTolerance: number;
+    fitTolerance: number;
+    startTangentX: number;
+    startTangentY: number;
+    startTangentZ: number;
+    endTangentX: number;
+    endTangentY: number;
+    endTangentZ: number;
+    knots: number[];
+    weights: number[];
+    controlPoints: point_t[];
+    fitPoints: point_t[];
+}
+
 export interface DxfGlobalObject {
-    header: DxfObj;
+    header: obj_t;
     tables: {
         appId: TableCommons<Partial<AppIdRecord>, false>;
         blockRecord: TableCommons<Partial<BlockRecord>, false>;

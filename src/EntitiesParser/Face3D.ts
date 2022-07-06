@@ -14,7 +14,7 @@ export class Face3D extends ParserBase {
     parse(tk: Tokenizer): void {
         const face: Face3DEntity = {} as Face3DEntity;
         face.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(Face3DEntitySpec)) {
                 defineProperty(tk, face, Face3DEntitySpec);
             } else tk.unexpected('code', tk.cline);

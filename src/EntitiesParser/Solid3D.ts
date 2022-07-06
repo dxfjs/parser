@@ -14,7 +14,7 @@ export class Solid3D extends ParserBase {
     parse(tk: Tokenizer): void {
         const solid3d: Solid3DEntity = {} as Solid3DEntity;
         solid3d.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(Solid3DEntitySpec)) {
                 defineProperty(tk, solid3d, Solid3DEntitySpec);
             } else tk.unexpected('code', tk.cline);

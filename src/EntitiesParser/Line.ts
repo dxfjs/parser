@@ -14,7 +14,7 @@ export class Line extends ParserBase {
     parse(tk: Tokenizer): void {
         const line: LineEntity = {} as LineEntity;
         line.subclassMarker = [];
-        while (tk.isNotSectionOrEof() && !tk.is(cZero)) {
+        while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(LineEntitySpec)) {
                 defineProperty(tk, line, LineEntitySpec);
             } else tk.unexpected('code', tk.cline);

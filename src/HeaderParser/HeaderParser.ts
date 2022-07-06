@@ -2,10 +2,10 @@ import { defineProperty, ename, value, variable } from '../Functional';
 import { ParserBase } from '../ParserBase';
 import { PointSpec } from '../Specifications';
 import { Tokenizer } from '../Tokenizer';
-import { DxfObj } from '../Types';
+import { obj_t } from '../Types';
 
 export class HeaderParser extends ParserBase {
-    variables: DxfObj;
+    variables: obj_t;
     private currentVariable: string | null;
     constructor() {
         super('HEADER');
