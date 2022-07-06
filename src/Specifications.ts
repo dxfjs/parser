@@ -325,3 +325,24 @@ TextEntitySpec.set(11, 'secondAlignmentendX');
 TextEntitySpec.set(21, 'secondAlignmentendY');
 TextEntitySpec.set(31, 'secondAlignmentendZ');
 TextEntitySpec.set(73, 'verticalJustification');
+
+// SPLINE
+export const SplineEntitySpec: SpecificationMap = new Map();
+extend(SplineEntitySpec, EntityCommonsSpec);
+SplineEntitySpec.set(210, 'normalVectorX');
+SplineEntitySpec.set(220, 'normalVectory');
+SplineEntitySpec.set(230, 'normalVectorZ');
+SplineEntitySpec.set(70, 'flags');
+SplineEntitySpec.set(71, 'degree');
+SplineEntitySpec.set(72, 'numberOfKnots');
+SplineEntitySpec.set(73, 'numberOfControlPoints');
+SplineEntitySpec.set(74, 'numberOfFitPoints');
+SplineEntitySpec.set(42, 'knotTolerance');
+SplineEntitySpec.set(43, 'controlPointTolerance');
+SplineEntitySpec.set(44, 'fitTolerance');
+SplineEntitySpec.set(12, 'startTangentX');
+SplineEntitySpec.set(22, 'startTangentY');
+SplineEntitySpec.set(32, 'startTangentZ');
+SplineEntitySpec.set(13, 'endTangentX');
+SplineEntitySpec.set(23, 'endTangentY');
+SplineEntitySpec.set(33, 'endTangentZ');
