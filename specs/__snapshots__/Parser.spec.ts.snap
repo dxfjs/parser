@@ -149,6 +149,7 @@ exports[`Parser class > should have a stable parsing 1`] = `
     "points": [],
     "solid3ds": [],
     "solids": [],
+    "splines": [],
     "texts": [],
   },
   "header": {
