@@ -128,6 +128,8 @@ export function ename(value: string): matcher_t {
 
 export const section = type('SECTION');
 export const endsec = type('ENDSEC');
+export const block = type('BLOCK');
+export const endblk = type('ENDBLK');
 export const table = type('TABLE');
 export const endtab = type('ENDTAB');
 export const eof = type('EOF');

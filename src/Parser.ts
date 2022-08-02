@@ -43,8 +43,9 @@ export class Parser {
             if (tk.hasError()) reject(tk.error);
             resolve({
                 ...this.header.objectify(),
-                ...this.tables.objectify(),
                 ...this.classes.objectify(),
+                ...this.tables.objectify(),
+                ...this.blocks.objectify(),
                 ...this.entities.objectify(),
             });
         });
