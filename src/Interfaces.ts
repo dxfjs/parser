@@ -4,11 +4,13 @@ export interface UnknownTokens {
     unknowns?: tokens_t;
 }
 
-export interface RecordCommons extends UnknownTokens {
+export interface Commons {
     handle: string;
     ownerObjectHandle: string;
     subclassMarker: string[];
 }
+
+export interface RecordCommons extends UnknownTokens, Commons {}
 
 export interface TableCommons<T, Multi> extends UnknownTokens {
     handle: string;
@@ -329,6 +331,29 @@ export interface SplineEntity extends EntityCommons {
     fitPoints: point_t[];
 }
 
+export interface Block extends Commons {
+    layerName: string;
+    name: string;
+    typeFlags: number;
+    basePointX: number;
+    basePointY: number;
+    basePointZ: number;
+    name2: string;
+    xRefPathName: string;
+    description: string;
+    entities: {
+        points: PointEntity[];
+        arcs: ArcEntity[];
+        solid3ds: Solid3DEntity[];
+        solids: SolidEntity[];
+        circles: CircleEntity[];
+        ellipses: EllipseEntity[];
+        lwPolylines: LWPolylineEntity[];
+        lines: LineEntity[];
+        texts: TextEntity[];
+    };
+}
+
 export interface DxfGlobalObject {
     header: obj_t;
     tables: {
@@ -340,6 +365,7 @@ export interface DxfGlobalObject {
         style: TableCommons<Partial<StyleRecord>, false>;
     };
     classes: ClassRecord[];
+    blocks: Block[];
     entities: {
         points: PointEntity[];
         arcs: ArcEntity[];

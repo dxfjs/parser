@@ -17,7 +17,7 @@ export class Line extends ParserBase {
         while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(LineEntitySpec)) {
                 defineProperty(tk, line, LineEntitySpec);
-            } else tk.unexpected('code', tk.cline);
+            } else tk.next();
         }
         this.lines.push(line);
     }

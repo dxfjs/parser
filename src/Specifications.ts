@@ -356,3 +356,16 @@ export const SplineFitPointSpec: spec_t = new Map();
 SplineFitPointSpec.set(11, 'x');
 SplineFitPointSpec.set(21, 'y');
 SplineFitPointSpec.set(31, 'z');
+
+// SPLINE
+export const BlockSpec: spec_t = new Map();
+extend(BlockSpec, EntityCommonsSpec);
+BlockSpec.set(8, 'layerName');
+BlockSpec.set(2, 'name');
+BlockSpec.set(70, 'typeFlags');
+BlockSpec.set(10, 'basePointX');
+BlockSpec.set(20, 'basePointY');
+BlockSpec.set(30, 'basePointZ');
+BlockSpec.set(3, 'name2');
+BlockSpec.set(1, 'xRefPathName');
+BlockSpec.set(4, 'description');

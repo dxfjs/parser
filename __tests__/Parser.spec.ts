@@ -1,7 +1,7 @@
-import { readFileSync } from 'fs';
 import { Parser } from '../src';
+import { readFileSync } from 'fs';
 
-const _content = readFileSync('./specs/__dxfs__/noentities.dxf');
+const _content = readFileSync('./__tests__/__dxfs__/noentities.dxf');
 
 describe('Parser class', () => {
     it('should parse all header variables', async () => {

@@ -17,7 +17,7 @@ export class Point extends ParserBase {
         while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(PointEntitySpec)) {
                 defineProperty(tk, point, PointEntitySpec);
-            } else tk.unexpected('code', tk.cline);
+            } else tk.next();
         }
         this.points.push(point);
     }

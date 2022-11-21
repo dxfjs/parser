@@ -17,7 +17,7 @@ export class Ellipse extends ParserBase {
         while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(EllipseEntitySpec)) {
                 defineProperty(tk, ellipse, EllipseEntitySpec);
-            } else tk.unexpected('code', tk.cline);
+            } else tk.next();
         }
         this.ellipses.push(ellipse);
     }

@@ -17,7 +17,7 @@ export class Arc extends ParserBase {
         while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(ArcEntitySpec)) {
                 defineProperty(tk, arc, ArcEntitySpec);
-            } else tk.unexpected('code', tk.cline);
+            } else tk.next();
         }
         this.arcs.push(arc);
     }

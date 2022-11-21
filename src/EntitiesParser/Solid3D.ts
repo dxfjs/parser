@@ -17,7 +17,7 @@ export class Solid3D extends ParserBase {
         while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(Solid3DEntitySpec)) {
                 defineProperty(tk, solid3d, Solid3DEntitySpec);
-            } else tk.unexpected('code', tk.cline);
+            } else tk.next();
         }
         this.solid3ds.push(solid3d);
     }

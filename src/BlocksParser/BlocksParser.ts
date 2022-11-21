@@ -1,10 +1,11 @@
 import { block, ename } from '../Functional';
+import { Block } from '../Interfaces';
 import { ParserBase } from '../ParserBase';
 import { Tokenizer } from '../Tokenizer';
 import { BlockParser } from './BlockParser';
 
 export class BlocksParser extends ParserBase {
-    blocks: string[];
+    blocks: Block[];
     constructor() {
         super('BLOCKS');
         this.blocks = [];
@@ -13,9 +14,9 @@ export class BlocksParser extends ParserBase {
     parse(tk: Tokenizer): void {
         while (tk.isNotSectionOrEof()) {
             if (tk.is(block, true)) {
-                const b = new BlockParser();
-                b.parse(tk);
-                this.blocks.push(b.name);
+                const bp = new BlockParser();
+                bp.parse(tk);
+                this.blocks.push(bp.objectify());
             }
             tk.next();
         }

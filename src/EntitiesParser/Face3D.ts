@@ -17,7 +17,7 @@ export class Face3D extends ParserBase {
         while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(Face3DEntitySpec)) {
                 defineProperty(tk, face, Face3DEntitySpec);
-            } else tk.unexpected('code', tk.cline);
+            } else tk.next();
         }
         this.face3ds.push(face);
     }

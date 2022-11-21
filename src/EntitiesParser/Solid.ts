@@ -17,7 +17,7 @@ export class Solid extends ParserBase {
         while (tk.isNotSectionOrEof() && tk.isNot(cZero)) {
             if (tk.existInSpec(SolidEntitySpec)) {
                 defineProperty(tk, solid, SolidEntitySpec);
-            } else tk.unexpected('code', tk.cline);
+            } else tk.next();
         }
         this.solids.push(solid);
     }

@@ -1,12 +1,13 @@
-import { HeaderParser } from './HeaderParser/HeaderParser';
-import { ClassesParser } from './ClassesParser/ClassesParser';
-import { TablesParser } from './TablesParser/TablesParser';
-import { BlocksParser } from './BlocksParser/BlocksParser';
-import { EntitiesParser } from './EntitiesParser/EntitiesParser';
-import { ObjectsParser } from './ObjectsParser/ObjectsParser';
-import { Tokenizer } from './Tokenizer';
 import { eof, section } from './Functional';
+
+import { BlocksParser } from './BlocksParser/BlocksParser';
+import { ClassesParser } from './ClassesParser/ClassesParser';
 import { DxfGlobalObject } from './Interfaces';
+import { EntitiesParser } from './EntitiesParser/EntitiesParser';
+import { HeaderParser } from './HeaderParser/HeaderParser';
+import { ObjectsParser } from './ObjectsParser/ObjectsParser';
+import { TablesParser } from './TablesParser/TablesParser';
+import { Tokenizer } from './Tokenizer';
 
 export class Parser {
     readonly header: HeaderParser;
