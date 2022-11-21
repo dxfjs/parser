@@ -4,15 +4,27 @@ A dxf parser it parse dxf content to a readable javascript object.
 
 ![CI](https://github.com/dxfjs/parser/actions/workflows/ci.yml/badge.svg)
 
+## Installation
+
+```sh
+pnpm add @dxfjs/parser
+```
+
 ## Get started
 
+```js
+const { Parser } = require('@dxfjs/parser')
+const content = '...' // The dxf content
+const parser = new Parser()
+parser
+    .parse(content)
+    .then((obj) => {
+        console.log(obj)
+        // ...
+    })
+    .catch((error) => console.error(error))
 ```
-pnpm install
 
-pnpm run build
-
-pnpm run example
-```
 
 ## Progress
 
