@@ -126,6 +126,10 @@ export function ename(value: string): matcher_t {
     };
 }
 
+export function comment(token: token_t) {
+    return token.code === 999;
+}
+
 export const section = type('SECTION');
 export const endsec = type('ENDSEC');
 export const block = type('BLOCK');
