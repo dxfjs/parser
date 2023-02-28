@@ -31,7 +31,7 @@ parser
 - [x] Parse `HEADER` section.
 - [x] Parse `CLASSES` section.
 - [x] Parse `TABLES` section.
-- [ ] Parse `BLOCKS` section.
+- [x] Parse `BLOCKS` section.
 - [x] Parse `ENTITIES` section.
     <details><summary>Supported entities</summary>
   
@@ -41,11 +41,11 @@ parser
     - [x] CIRCLE
     - [x] ELLIPSE
     - [ ] HATCH
-    - [ ] INSERT
+    - [x] INSERT
     - [x] LINE
     - [x] LWPOLYLINE
     - [x] POINT
-    - [ ] POLYLINE
+    - [x] POLYLINE
     - [x] SOLID
     - [x] SPLINE
     - [x] TEXT
