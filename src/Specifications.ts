@@ -295,6 +295,57 @@ LWPolylineVertexSpec.set(40, 'startingWidth');
 LWPolylineVertexSpec.set(41, 'endWidth');
 LWPolylineVertexSpec.set(42, 'bulge');
 
+// POLYLINE
+export const PolylineEntitySpec: spec_t = new Map();
+extend(PolylineEntitySpec, EntityCommonsSpec);
+PolylineEntitySpec.set(66, 'entitiesFollowFlag');
+PolylineEntitySpec.set(10, 'x');
+PolylineEntitySpec.set(20, 'y');
+PolylineEntitySpec.set(30, 'z');
+PolylineEntitySpec.set(39, 'thickness');
+PolylineEntitySpec.set(70, 'flag');
+PolylineEntitySpec.set(40, 'startingWidth');
+PolylineEntitySpec.set(41, 'endWidth');
+PolylineEntitySpec.set(71, 'mVertexCount');
+PolylineEntitySpec.set(72, 'nVertexCount');
+PolylineEntitySpec.set(73, 'mDensity');
+PolylineEntitySpec.set(74, 'nDensity');
+PolylineEntitySpec.set(75, 'curvesAndSmoothSurface');
+
+// VERTEX
+export const VertexEntitySpec: spec_t = new Map();
+extend(VertexEntitySpec, EntityCommonsSpec);
+VertexEntitySpec.set(10, 'x');
+VertexEntitySpec.set(20, 'y');
+VertexEntitySpec.set(30, 'z');
+VertexEntitySpec.set(40, 'startingWidth');
+VertexEntitySpec.set(41, 'endWidth');
+VertexEntitySpec.set(42, 'bulge');
+VertexEntitySpec.set(70, 'flag');
+VertexEntitySpec.set(50, 'tangentDirection');
+VertexEntitySpec.set(71, 'meshVertexIndex1');
+VertexEntitySpec.set(72, 'meshVertexIndex2');
+VertexEntitySpec.set(73, 'meshVertexIndex3');
+VertexEntitySpec.set(74, 'meshVertexIndex4');
+VertexEntitySpec.set(91, 'identifier');
+
+// INSERT
+export const InsertEntitySpec: spec_t = new Map();
+extend(InsertEntitySpec, EntityCommonsSpec);
+InsertEntitySpec.set(66, 'attributesFollowFlag');
+InsertEntitySpec.set(2, 'blockName');
+InsertEntitySpec.set(10, 'x');
+InsertEntitySpec.set(20, 'y');
+InsertEntitySpec.set(30, 'z');
+InsertEntitySpec.set(41, 'xScale');
+InsertEntitySpec.set(42, 'yScale');
+InsertEntitySpec.set(43, 'zScale');
+InsertEntitySpec.set(50, 'rotation');
+InsertEntitySpec.set(70, 'columnCount');
+InsertEntitySpec.set(71, 'rowCount');
+InsertEntitySpec.set(44, 'columnSpacing');
+InsertEntitySpec.set(45, 'rowSpacing');
+
 // LINE
 export const LineEntitySpec: spec_t = new Map();
 extend(LineEntitySpec, EntityCommonsSpec);

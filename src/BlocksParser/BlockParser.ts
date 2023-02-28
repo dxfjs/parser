@@ -14,7 +14,7 @@ import { Solid3D } from '../EntitiesParser/Solid3D';
 import { Spline } from '../EntitiesParser/Spline';
 import { Text } from '../EntitiesParser/Text';
 import { Vertex } from '../EntitiesParser/Vertex';
-import { block, cZero, defineProperty, endblk } from '../Functional';
+import {block, cZero, defineProperty, endblk} from '../Functional';
 import { Block } from '../Interfaces';
 import { BlockSpec } from '../Specifications';
 import { Tokenizer } from '../Tokenizer';
@@ -96,14 +96,17 @@ export class BlockParser {
         return {
             ...this.block,
             entities: {
-                ...this.point.objectify(),
-                ...this.arc.objectify(),
+                ...this.face3d.objectify(),
                 ...this.solid3d.objectify(),
-                ...this.solid.objectify(),
+                ...this.arc.objectify(),
                 ...this.circle.objectify(),
                 ...this.ellipse.objectify(),
-                ...this.lwPolyline.objectify(),
                 ...this.line.objectify(),
+                ...this.lwPolyline.objectify(),
+                ...this.polyline.objectify(),
+                ...this.point.objectify(),
+                ...this.solid.objectify(),
+                ...this.spline.objectify(),
                 ...this.text.objectify(),
             },
         };

@@ -278,6 +278,55 @@ export interface LWPolylineEntity extends EntityCommons {
     vertices: LWPolylineVertex[];
 }
 
+export interface PolylineEntity extends EntityCommons {
+    entitiesFollowFlag: number;
+    x: number;
+    y: number;
+    z: number;
+    thickness: number;
+    flag: number;
+    startingWidth: number;
+    endWidth: number;
+    mVertexCount: number;
+    nVertexCount: number;
+    mDensity: number;
+    nDensity: number;
+    curvesAndSmoothSurface: number;
+    vertices: VertexEntity[]
+}
+
+export interface InsertEntity extends EntityCommons {
+    attributesFollowFlag: number;
+    blockName: string;
+    x: number;
+    y: number;
+    z: number;
+    xScale: number;
+    yScale: number;
+    zScale: number;
+    rotation: number;
+    columnCount: number;
+    rowCount: number;
+    columnSpacing: number;
+    rowSpacing: number;
+}
+
+export interface VertexEntity extends EntityCommons {
+    x: number;
+    y: number;
+    z: number;
+    startingWidth: number;
+    endWidth: number;
+    bulge: number;
+    flag: number;
+    tangentDirection: number;
+    meshVertexIndex1: number;
+    meshVertexIndex2: number;
+    meshVertexIndex3: number;
+    meshVertexIndex4: number;
+    identifier: number;
+}
+
 export interface LineEntity extends EntityCommons {
     thickness: number;
     startX: number;
