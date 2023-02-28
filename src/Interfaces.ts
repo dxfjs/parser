@@ -391,6 +391,7 @@ export interface Block extends Commons {
     xRefPathName: string;
     description: string;
     entities: {
+        face3ds: Face3DEntity[];
         points: PointEntity[];
         arcs: ArcEntity[];
         solid3ds: Solid3DEntity[];
@@ -398,8 +399,10 @@ export interface Block extends Commons {
         circles: CircleEntity[];
         ellipses: EllipseEntity[];
         lwPolylines: LWPolylineEntity[];
+        polylines: PolylineEntity[];
         lines: LineEntity[];
         texts: TextEntity[];
+        splines: SplineEntity[];
     };
 }
 
@@ -416,6 +419,7 @@ export interface DxfGlobalObject {
     classes: ClassRecord[];
     blocks: Block[];
     entities: {
+        face3ds: Face3DEntity[];
         points: PointEntity[];
         arcs: ArcEntity[];
         solid3ds: Solid3DEntity[];
@@ -423,7 +427,10 @@ export interface DxfGlobalObject {
         circles: CircleEntity[];
         ellipses: EllipseEntity[];
         lwPolylines: LWPolylineEntity[];
+        polylines: PolylineEntity[];
         lines: LineEntity[];
         texts: TextEntity[];
+        splines: SplineEntity[];
+        inserts: InsertEntity[];
     };
 }
