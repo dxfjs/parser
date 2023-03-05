@@ -96,18 +96,19 @@ export class BlockParser {
         return {
             ...this.block,
             entities: {
+                ...this.point.objectify(),
+                ...this.arc.objectify(),
                 ...this.face3d.objectify(),
                 ...this.solid3d.objectify(),
-                ...this.arc.objectify(),
+                ...this.solid.objectify(),
                 ...this.circle.objectify(),
                 ...this.ellipse.objectify(),
-                ...this.line.objectify(),
+                ...this.insert.objectify(),
                 ...this.lwPolyline.objectify(),
                 ...this.polyline.objectify(),
-                ...this.point.objectify(),
-                ...this.solid.objectify(),
-                ...this.spline.objectify(),
+                ...this.line.objectify(),
                 ...this.text.objectify(),
+                ...this.spline.objectify(),
             },
         };
     }

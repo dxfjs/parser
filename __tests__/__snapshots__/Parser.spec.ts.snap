@@ -12,6 +12,7 @@ exports[`Parser class > should have a stable parsing 1`] = `
         "circles": [],
         "ellipses": [],
         "face3ds": [],
+        "inserts": [],
         "lines": [],
         "lwPolylines": [],
         "points": [],
@@ -42,6 +43,7 @@ exports[`Parser class > should have a stable parsing 1`] = `
         "circles": [],
         "ellipses": [],
         "face3ds": [],
+        "inserts": [],
         "lines": [],
         "lwPolylines": [],
         "points": [],
@@ -73,6 +75,7 @@ exports[`Parser class > should have a stable parsing 1`] = `
         "circles": [],
         "ellipses": [],
         "face3ds": [],
+        "inserts": [],
         "lines": [],
         "lwPolylines": [],
         "points": [],
@@ -104,6 +107,7 @@ exports[`Parser class > should have a stable parsing 1`] = `
         "circles": [],
         "ellipses": [],
         "face3ds": [],
+        "inserts": [],
         "lines": [
           {
             "colorNumber": 0,

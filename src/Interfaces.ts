@@ -380,6 +380,22 @@ export interface SplineEntity extends EntityCommons {
     fitPoints: point_t[];
 }
 
+export interface Entities {
+    face3ds: Face3DEntity[];
+    points: PointEntity[];
+    arcs: ArcEntity[];
+    solid3ds: Solid3DEntity[];
+    solids: SolidEntity[];
+    circles: CircleEntity[];
+    ellipses: EllipseEntity[];
+    lwPolylines: LWPolylineEntity[];
+    polylines: PolylineEntity[];
+    lines: LineEntity[];
+    texts: TextEntity[];
+    splines: SplineEntity[];
+    inserts: InsertEntity[];
+}
+
 export interface Block extends Commons {
     layerName: string;
     name: string;
@@ -390,20 +406,7 @@ export interface Block extends Commons {
     name2: string;
     xRefPathName: string;
     description: string;
-    entities: {
-        face3ds: Face3DEntity[];
-        points: PointEntity[];
-        arcs: ArcEntity[];
-        solid3ds: Solid3DEntity[];
-        solids: SolidEntity[];
-        circles: CircleEntity[];
-        ellipses: EllipseEntity[];
-        lwPolylines: LWPolylineEntity[];
-        polylines: PolylineEntity[];
-        lines: LineEntity[];
-        texts: TextEntity[];
-        splines: SplineEntity[];
-    };
+    entities: Entities;
 }
 
 export interface DxfGlobalObject {
@@ -418,19 +421,5 @@ export interface DxfGlobalObject {
     };
     classes: ClassRecord[];
     blocks: Block[];
-    entities: {
-        face3ds: Face3DEntity[];
-        points: PointEntity[];
-        arcs: ArcEntity[];
-        solid3ds: Solid3DEntity[];
-        solids: SolidEntity[];
-        circles: CircleEntity[];
-        ellipses: EllipseEntity[];
-        lwPolylines: LWPolylineEntity[];
-        polylines: PolylineEntity[];
-        lines: LineEntity[];
-        texts: TextEntity[];
-        splines: SplineEntity[];
-        inserts: InsertEntity[];
-    };
+    entities: Entities;
 }
