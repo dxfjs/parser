@@ -382,7 +382,9 @@ export interface SplineEntity extends EntityCommons {
 
 export interface AttdefEntity extends EntityCommons {
     thickness?: number;
-    firstAlignmentPoint: point_t;
+    firstAlignmentPointX: number;
+    firstAlignmentPointY: number;
+    firstAlignmentPointZ: number;
     height: number;
     value: string;
     rotation?: number;
@@ -391,8 +393,9 @@ export interface AttdefEntity extends EntityCommons {
     styleName?: string;
     generationFlags?: number;
     horizontalJustification?: number;
-    secondAlignmentPoint?: point_t;
-    extrusion?: point_t;
+    secondAlignmentPointX?: number;
+    secondAlignmentPointY?: number;
+    secondAlignmentPointZ?: number;
     verticalJustification?: number;
     prompt?: string;
     tag: string;
@@ -401,7 +404,9 @@ export interface AttdefEntity extends EntityCommons {
 
 export interface AttribEntity extends EntityCommons {
     thickness?: number;
-    startPoint: point_t;
+    startPointX: number;
+    startPointY: number;
+    startPointZ: number;
     height: number;
     value: string;
     tag: string;
@@ -413,8 +418,9 @@ export interface AttribEntity extends EntityCommons {
     generationFlags?: number;
     horizontalJustification?: number;
     verticalJustification?: number;
-    alignmentPoint?: point_t;
-    extrusion?: point_t;
+    alignmentPointX?: number;
+    alignmentPointY?: number;
+    alignmentPointZ?: number;
 }
 
 export interface Entities {
