@@ -292,7 +292,7 @@ export interface PolylineEntity extends EntityCommons {
     mDensity: number;
     nDensity: number;
     curvesAndSmoothSurface: number;
-    vertices: VertexEntity[]
+    vertices: VertexEntity[];
 }
 
 export interface InsertEntity extends EntityCommons {
@@ -380,10 +380,49 @@ export interface SplineEntity extends EntityCommons {
     fitPoints: point_t[];
 }
 
+export interface AttdefEntity extends EntityCommons {
+    thickness?: number;
+    firstAlignmentPoint: point_t;
+    height: number;
+    value: string;
+    rotation?: number;
+    relativeXScaleFactor?: number;
+    obliqueAngle?: number;
+    styleName?: string;
+    generationFlags?: number;
+    horizontalJustification?: number;
+    secondAlignmentPoint?: point_t;
+    extrusion?: point_t;
+    verticalJustification?: number;
+    prompt?: string;
+    tag: string;
+    flags?: number;
+}
+
+export interface AttribEntity extends EntityCommons {
+    thickness?: number;
+    startPoint: point_t;
+    height: number;
+    value: string;
+    tag: string;
+    flags?: number;
+    rotation?: number;
+    relativeXScaleFactor?: number;
+    obliqueAngle?: number;
+    styleName?: string;
+    generationFlags?: number;
+    horizontalJustification?: number;
+    verticalJustification?: number;
+    alignmentPoint?: point_t;
+    extrusion?: point_t;
+}
+
 export interface Entities {
     face3ds: Face3DEntity[];
     points: PointEntity[];
     arcs: ArcEntity[];
+    attdefs: AttdefEntity[];
+    attribs: AttribEntity[];
     solid3ds: Solid3DEntity[];
     solids: SolidEntity[];
     circles: CircleEntity[];

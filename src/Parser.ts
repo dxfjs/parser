@@ -1,4 +1,4 @@
-import { comment, eof, section } from './Functional';
+import { endsec, eof, section } from './Functional';
 
 import { BlocksParser } from './BlocksParser/BlocksParser';
 import { ClassesParser } from './ClassesParser/ClassesParser';
@@ -37,9 +37,8 @@ export class Parser {
                     else if (this.blocks.match(tk)) this.blocks.parse(tk);
                     else if (this.entities.match(tk)) this.entities.parse(tk);
                     else if (this.objects.match(tk)) this.objects.parse(tk);
-                    else tk.unexpected('code', tk.cline);
-                } else if(tk.is(comment)) tk.next(); // Ignore comments
-                else tk.expected('SECTION', tk.vline);
+                    else while (!tk.is(endsec, true)) tk.next();
+                } else tk.expected('SECTION', tk.vline);
                 if (!tk.hasNext()) tk.expected('EOF', tk.vline);
             }
             if (tk.hasError()) reject(tk.error);

@@ -78,7 +78,8 @@ export function tokens(lines: string[]): string | tokens_t {
             const code = lines[i++].trim();
             if (!numeric(code)) return expected('code', i);
             if (i >= length) return expected('value', i + 1);
-            tokens.push(token(parseInt(code), lines[i].trim(), i));
+            if (code !== '999')
+                tokens.push(token(parseInt(code), lines[i].trim(), i));
         }
     }
     return tokens;
