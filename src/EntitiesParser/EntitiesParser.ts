@@ -17,11 +17,15 @@ import { Circle } from './Circle';
 import { Arc } from './Arc';
 import { Solid3D } from './Solid3D';
 import { Face3D } from './Face3D';
+import { Attdef } from './Attdef';
+import { Attrib } from './Attrib';
 
 export class EntitiesParser extends ParserBase {
     face3D: Face3D;
     solid3D: Solid3D;
     arc: Arc;
+    attdef: Attdef;
+    attrib: Attrib;
     circle: Circle;
     ellipse: Ellipse;
     hatch: Hatch;
@@ -40,6 +44,8 @@ export class EntitiesParser extends ParserBase {
         this.face3D = new Face3D();
         this.solid3D = new Solid3D();
         this.arc = new Arc();
+        this.attdef = new Attdef();
+        this.attrib = new Attrib();
         this.circle = new Circle();
         this.ellipse = new Ellipse();
         this.hatch = new Hatch();
@@ -60,6 +66,8 @@ export class EntitiesParser extends ParserBase {
             if (this.face3D.match(tk)) this.face3D.parse(tk);
             else if (this.solid3D.match(tk)) this.solid3D.parse(tk);
             else if (this.arc.match(tk)) this.arc.parse(tk);
+            else if (this.attdef.match(tk)) this.attdef.parse(tk);
+            else if (this.attrib.match(tk)) this.attrib.parse(tk);
             else if (this.circle.match(tk)) this.circle.parse(tk);
             else if (this.ellipse.match(tk)) this.ellipse.parse(tk);
             else if (this.hatch.match(tk)) this.hatch.parse(tk);
@@ -85,6 +93,8 @@ export class EntitiesParser extends ParserBase {
             entities: {
                 ...this.point.objectify(),
                 ...this.arc.objectify(),
+                ...this.attdef.objectify(),
+                ...this.attrib.objectify(),
                 ...this.face3D.objectify(),
                 ...this.solid3D.objectify(),
                 ...this.solid.objectify(),

@@ -1,4 +1,6 @@
 import { Arc } from '../EntitiesParser/Arc';
+import { Attdef } from '../EntitiesParser/Attdef';
+import { Attrib } from '../EntitiesParser/Attrib';
 import { Circle } from '../EntitiesParser/Circle';
 import { Ellipse } from '../EntitiesParser/Ellipse';
 import { Face3D } from '../EntitiesParser/Face3D';
@@ -14,7 +16,7 @@ import { Solid3D } from '../EntitiesParser/Solid3D';
 import { Spline } from '../EntitiesParser/Spline';
 import { Text } from '../EntitiesParser/Text';
 import { Vertex } from '../EntitiesParser/Vertex';
-import {block, cZero, defineProperty, endblk} from '../Functional';
+import { block, cZero, defineProperty, endblk } from '../Functional';
 import { Block } from '../Interfaces';
 import { BlockSpec } from '../Specifications';
 import { Tokenizer } from '../Tokenizer';
@@ -24,6 +26,8 @@ export class BlockParser {
     face3d: Face3D;
     solid3d: Solid3D;
     arc: Arc;
+    attdef: Attdef;
+    attrib: Attrib;
     circle: Circle;
     ellipse: Ellipse;
     hatch: Hatch;
@@ -43,6 +47,8 @@ export class BlockParser {
         this.face3d = new Face3D();
         this.solid3d = new Solid3D();
         this.arc = new Arc();
+        this.attdef = new Attdef();
+        this.attrib = new Attrib();
         this.circle = new Circle();
         this.ellipse = new Ellipse();
         this.hatch = new Hatch();
@@ -76,6 +82,8 @@ export class BlockParser {
                 if (this.face3d.match(tk)) this.face3d.parse(tk);
                 else if (this.solid3d.match(tk)) this.solid3d.parse(tk);
                 else if (this.arc.match(tk)) this.arc.parse(tk);
+                else if (this.attdef.match(tk)) this.attdef.parse(tk);
+                else if (this.attrib.match(tk)) this.attrib.parse(tk);
                 else if (this.circle.match(tk)) this.circle.parse(tk);
                 else if (this.ellipse.match(tk)) this.ellipse.parse(tk);
                 else if (this.hatch.match(tk)) this.hatch.parse(tk);
@@ -98,6 +106,8 @@ export class BlockParser {
             entities: {
                 ...this.point.objectify(),
                 ...this.arc.objectify(),
+                ...this.attdef.objectify(),
+                ...this.attrib.objectify(),
                 ...this.face3d.objectify(),
                 ...this.solid3d.objectify(),
                 ...this.solid.objectify(),
