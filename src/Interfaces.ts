@@ -309,6 +309,7 @@ export interface InsertEntity extends EntityCommons {
     rowCount: number;
     columnSpacing: number;
     rowSpacing: number;
+    attribs: AttribEntity[];
 }
 
 export interface VertexEntity extends EntityCommons {
